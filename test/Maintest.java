@@ -7,6 +7,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import static org.junit.Assert.assertTrue;
+
 /**
  * Created by Erik on 6/15/16.
  */
@@ -26,7 +28,7 @@ public class MainTest {
         ArrayList<User> userList = Main.selectUsers(conn);
         conn.close();
 
-        assertTrue();
+        assertTrue(user1 != null);
     }
 
     @Test
@@ -39,7 +41,7 @@ public class MainTest {
         ArrayList<User> userList = Main.selectUsers(conn);
         conn.close();
 
-        assertTrue();
+        assertTrue(user1 != null);
     }
 
     @Test
@@ -53,7 +55,8 @@ public class MainTest {
         ArrayList<User> userList = Main.selectUsers(conn);
         conn.close();
 
-        assertTrue();
+        assertTrue(user1 == null);
+        assertTrue(user2 == null);
     }
 }
 
